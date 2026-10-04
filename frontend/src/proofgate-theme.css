@@ -1,9 +1,3 @@
-.sidebar-campaign{position:relative;isolation:isolate;min-height:130px;overflow:hidden;border:1px solid #26323b;border-radius:9px;margin:0 1px 11px;background:#17242b url("/images/site-progress.jpg") center 48%/cover}
-.sidebar-campaign:before{content:"";position:absolute;z-index:-1;inset:0;background:linear-gradient(0deg,rgba(5,12,17,.94),rgba(7,15,21,.43) 70%,rgba(7,15,21,.12))}
-.sidebar-campaign>div{position:absolute;left:11px;right:11px;bottom:11px}
-.sidebar-campaign>div>span{display:block;font:800 12px/1.2 Manrope,sans-serif;letter-spacing:.25px;color:#edf6fb}
-.sidebar-campaign small{display:block;margin-top:5px;max-width:145px;color:#bbcad0;font-size:8px;line-height:1.45}
-.campaign-mark{position:absolute;right:9px;top:9px;width:26px;height:26px;display:grid;place-items:center;border:1px solid rgba(117,198,226,.28);border-radius:7px;background:rgba(8,17,23,.58);color:#80cfe7}
 .hero-header{position:relative;isolation:isolate;min-height:147px;align-items:flex-end;overflow:hidden;border:1px solid #27343c;border-radius:9px;margin:16px 0 13px;padding:20px 19px;background:#121d24 url("/images/construction-hero.jpg") center 52%/cover}
 .hero-header:before{position:absolute;z-index:-1;content:"";inset:0;background:linear-gradient(90deg,rgba(8,14,19,.98) 2%,rgba(9,16,21,.91) 37%,rgba(9,17,23,.48) 74%,rgba(9,15,20,.56)),linear-gradient(0deg,rgba(7,13,18,.79),transparent 70%)}
 .hero-heading-copy{position:relative;max-width:700px}

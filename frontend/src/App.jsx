@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import {
   Activity, AlertTriangle, ArrowDownRight, ArrowUpRight, Bell, Check, CheckCircle2,
   ChevronDown, ChevronRight, CircleHelp, ClipboardCheck, Clock3, CloudUpload, Eye, FileCheck2,
-  FileText, GitBranch, HardHat, Image as ImageIcon, Layers3, LockKeyhole, MapPin, Menu,
+  Download, FileText, GitBranch, HardHat, Image as ImageIcon, Layers3, LockKeyhole, MapPin, Menu,
   MessageSquareText, Network, RefreshCw, Scale, Search, ShieldCheck, Sparkles, Truck, X, XCircle
 } from "lucide-react";
 
@@ -55,6 +55,19 @@ const stages = [
 const money = (value) => `₹${(value / 100000).toFixed(2)}L`;
 const formatRupees = (value) => `₹${Number(value).toLocaleString("en-IN")}`;
 const timeNow = () => new Date().toLocaleTimeString("en-IN", { hour12: false });
+const downloadEvidenceCsv = (records) => {
+  const columns = ["Document", "Type", "Source", "Timestamp", "Confidence", "Status"];
+  const csvCell = (value) => `"${String(value ?? "").replace(/"/g, '""')}"`;
+  const csv = [columns, ...records.map((item) => [
+    item.name, item.type, item.source, item.timestamp, item.confidence, item.status
+  ])].map((row) => row.map(csvCell).join(",")).join("\r\n");
+  const url = URL.createObjectURL(new Blob(["\uFEFF", csv], { type: "text/csv;charset=utf-8" }));
+  const link = document.createElement("a");
+  link.href = url;
+  link.download = "buildwise-evidence-register.csv";
+  link.click();
+  window.setTimeout(() => URL.revokeObjectURL(url), 1000);
+};
 
 export default function App() {
   const [evidence, setEvidence] = useState(initialEvidence);
@@ -464,8 +477,6 @@ export default function App() {
             </a>
           ))}
         </nav>
-        <div className="sidebar-spacer" />
-        <div className="sidebar-campaign"><div><span>BUILD WITH<br />CONFIDENCE</span><small>Evidence-first construction payments.</small></div><span className="campaign-mark"><HardHat size={18} /></span></div>
         <div className="side-status"><span className="status-pulse" /><span><b>Demo Mode</b><small>Deterministic verification</small></span><span className="switch-on" /></div>
         <button className="demo-reset-button" onClick={resetDemo} disabled={resetting || running}><RefreshCw size={12} className={resetting ? "spin" : ""} />{resetting ? "Resetting demo…" : "Reset demo scenario"}</button>
         <div className="human-note"><LockKeyhole size={15} /><span>Human-in-the-loop<br /><b>Always enabled</b></span></div>
@@ -918,7 +929,7 @@ function EvidenceWorkspace({ mode, evidence, onOpenEvidence, onOpenPhoto, initia
     : mode === "documents"
       ? [["supporting", "Upload document"], ["concrete_delivery", "Upload delivery receipt"], ["reinforcement_inspection", "Upload inspection certificate"]]
       : [["auto", "Upload any evidence"], ["concrete_delivery", "Delivery receipt"], ["reinforcement_inspection", "Inspection certificate"], ["site_photo", "Site photo"]];
-  return <section className="panel evidence-workspace"><div className="evidence-toolbar"><div><span className="panel-kicker">EVIDENCE VAULT · SOURCE TRACEABILITY</span><h2>{mode === "photos" ? "Site photos" : mode === "documents" ? "Project documents" : "Evidence records"}</h2></div><label className="evidence-search"><Search size={15} /><input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Search evidence, materials, documents..." /></label></div>
+  return <section className="panel evidence-workspace"><div className="evidence-toolbar"><div><span className="panel-kicker">EVIDENCE VAULT · SOURCE TRACEABILITY</span><h2>{mode === "photos" ? "Site photos" : mode === "documents" ? "Project documents" : "Evidence records"}</h2></div><div className="evidence-toolbar-actions"><label className="evidence-search"><Search size={15} /><input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Search evidence, materials, documents..." /></label><button className="button secondary evidence-export" aria-label="Export filtered evidence register as CSV" onClick={() => downloadEvidenceCsv(mode === "photos" ? [...photoRecords, ...demoPhotos.map(({ file, label }) => ({ name: file, type: "Site photo", source: label, timestamp: "04 Oct · 10:25", confidence: 80, status: "supporting" }))] : rows)}><Download size={14} />Export CSV</button></div></div>
     <div className="upload-options" aria-label="Upload evidence files">{uploadOptions.map(([kind, label]) => <button key={kind} className="upload-option" onClick={() => onUpload(kind)} disabled={uploading}><CloudUpload size={13} />{uploading ? "Uploading…" : label}</button>)}</div>
     <div className="evidence-filter-row">{categories.map((item) => <button key={item} className={category === item ? "active" : ""} onClick={() => setCategory(item)}>{item}</button>)}<span>{recordCount} RECORDS</span></div>
     {mode === "photos" ? <>
