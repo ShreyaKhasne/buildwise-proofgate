@@ -1,0 +1,63 @@
+.sidebar-campaign{position:relative;isolation:isolate;min-height:130px;overflow:hidden;border:1px solid #26323b;border-radius:9px;margin:0 1px 11px;background:#17242b url("/images/site-progress.jpg") center 48%/cover}
+.sidebar-campaign:before{content:"";position:absolute;z-index:-1;inset:0;background:linear-gradient(0deg,rgba(5,12,17,.94),rgba(7,15,21,.43) 70%,rgba(7,15,21,.12))}
+.sidebar-campaign>div{position:absolute;left:11px;right:11px;bottom:11px}
+.sidebar-campaign>div>span{display:block;font:800 12px/1.2 Manrope,sans-serif;letter-spacing:.25px;color:#edf6fb}
+.sidebar-campaign small{display:block;margin-top:5px;max-width:145px;color:#bbcad0;font-size:8px;line-height:1.45}
+.campaign-mark{position:absolute;right:9px;top:9px;width:26px;height:26px;display:grid;place-items:center;border:1px solid rgba(117,198,226,.28);border-radius:7px;background:rgba(8,17,23,.58);color:#80cfe7}
+.hero-header{position:relative;isolation:isolate;min-height:147px;align-items:flex-end;overflow:hidden;border:1px solid #27343c;border-radius:9px;margin:16px 0 13px;padding:20px 19px;background:#121d24 url("/images/construction-hero.jpg") center 52%/cover}
+.hero-header:before{position:absolute;z-index:-1;content:"";inset:0;background:linear-gradient(90deg,rgba(8,14,19,.98) 2%,rgba(9,16,21,.91) 37%,rgba(9,17,23,.48) 74%,rgba(9,15,20,.56)),linear-gradient(0deg,rgba(7,13,18,.79),transparent 70%)}
+.hero-heading-copy{position:relative;max-width:700px}
+.hero-header .eyebrow{color:#aac1cd}
+.hero-header h1{font-size:25px;margin:7px 0 4px;text-shadow:0 2px 16px rgba(0,0,0,.4)}
+.hero-header p{color:#b2c0c7;font-size:10px}
+.hero-header .heading-actions{position:relative}
+.hero-project-details{display:flex;align-items:center;gap:11px;margin-top:12px;color:#a9b8c0;font-size:8px}
+.hero-project-details>span{display:flex;align-items:center;gap:5px}
+.hero-project-details b{font:8px "DM Mono",monospace;letter-spacing:.45px;color:#7893a0}
+.hero-project-details>i{height:12px;width:1px;background:rgba(167,190,200,.27)}
+.trust-banner{height:30px}
+.progress-strip{margin:0 0 13px;padding:12px 15px 13px;background:linear-gradient(100deg,#111b22,#101820 65%,#111d23)}
+.progress-strip .panel-heading{margin-bottom:9px}
+.progress-strip .panel-kicker{font-size:7px}
+.progress-strip .panel-heading h2{font-size:12px}
+.progress-strip .project-progress{margin:0 2px 11px}
+.progress-strip .milestone{flex-direction:row;gap:6px;font-size:8px}
+.progress-strip .milestone-track:before{top:6px}
+.progress-strip .milestone-dot{width:13px;height:13px}
+.evidence-side-panel{padding:13px 13px 11px}
+.evidence-side-panel .panel-heading{margin-bottom:9px}
+.evidence-side-panel .panel-kicker{font-size:7px}
+.evidence-side-panel .panel-heading h2{font-size:12px}
+.evidence-count{font:7px "DM Mono",monospace;color:#68d6a2;border:1px solid rgba(86,214,160,.2);background:rgba(86,214,160,.06);border-radius:4px;padding:4px 6px;white-space:nowrap}
+.evidence-side-list{display:grid}
+.evidence-side-row{min-width:0;min-height:39px;display:flex;align-items:center;gap:7px;border-top:1px solid rgba(36,51,61,.72);padding:5px 1px}
+.side-doc-icon{width:25px;height:27px;flex:none;display:grid;place-items:center;border:1px solid #2c3b44;border-radius:5px;background:#17232b;color:#87c5dd}
+.side-doc-icon.good{color:#66d0a0;border-color:rgba(86,214,160,.2);background:rgba(86,214,160,.06)}
+.side-doc-icon.review{color:#e2b267;border-color:rgba(233,183,99,.2);background:rgba(233,183,99,.06)}
+.side-doc-icon.missing{color:#84919a;border-style:dashed;background:#12191e}
+.side-doc-copy{flex:1;min-width:0}
+.side-doc-copy>b,.side-doc-copy>small{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.side-doc-copy>b{font-size:8px;font-weight:600;color:#c4d0d7}
+.side-doc-copy>small{font-size:7px;color:#778994;margin-top:3px}
+.side-doc-status{font:7px "DM Mono",monospace;white-space:nowrap}
+.side-doc-status.good{color:#69d2a1}
+.side-doc-status.review{color:#e1b66c}
+.side-doc-status.missing{color:#89959b}
+.side-upload{width:100%;height:29px;display:flex;align-items:center;gap:6px;padding:0 7px;border:1px solid #2b3c46;border-radius:5px;background:#142029;color:#84cbe4;font-size:8px;cursor:pointer}
+.side-upload:hover{background:#1a2b36}
+.side-upload>span{margin-left:auto;color:#728995;font:7px "DM Mono",monospace}
+.site-photos-heading{display:flex;align-items:center;justify-content:space-between;margin-top:13px;margin-bottom:7px}
+.site-photos-heading>b{font-size:9px;color:#c8d4da}
+.site-photos-heading>a{display:flex;align-items:center;color:#77c8e8;font-size:8px}
+.site-photo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:5px}
+.site-photo{height:54px;border:1px solid #30404a;border-radius:4px;background-color:#203039;background-position:center;background-size:cover;position:relative;overflow:hidden}
+.site-photo:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(5,11,14,.5),transparent 75%)}
+.site-photo.photo-one{background-image:url("/images/concrete-slab.jpg")}
+.site-photo.photo-two{background-image:url("/images/reinforcement.jpg")}
+.site-photo.photo-three{background-image:url("/images/site-progress.jpg")}
+.photo-caption{display:flex;justify-content:space-between;gap:4px;margin-top:5px;color:#738590;font-size:7px}
+.hero-header,.panel{min-width:0}
+@media(min-width:1500px){.hero-header{min-height:155px}.site-photo{height:63px}}
+@media(max-width:1100px){.sidebar-campaign{min-height:105px}.hero-project-details{gap:7px}.hero-header{min-height:140px}.evidence-side-row{min-height:36px}.side-doc-copy>b{font-size:7px}}
+@media(max-width:820px){.sidebar-campaign{min-height:130px}.hero-header{background-position:center 52%}}
+@media(max-width:650px){.hero-header{min-height:180px;align-items:flex-start;flex-direction:column;padding:16px 13px;margin:12px 0;background-position:57% center}.hero-header:before{background:linear-gradient(90deg,rgba(8,14,19,.95),rgba(9,16,21,.71)),linear-gradient(0deg,rgba(7,13,18,.74),transparent)}.hero-heading-copy{width:100%}.hero-header h1{font-size:21px}.hero-header .heading-actions{width:100%;margin-top:12px}.hero-project-details{flex-wrap:wrap;row-gap:7px}.progress-strip{padding:11px 10px}.progress-strip .milestone-track{gap:3px}.progress-strip .milestone{gap:4px;font-size:7px}.progress-strip .milestone-dot{width:12px;height:12px}.evidence-side-row{min-height:40px}.side-doc-copy>b{font-size:8px}.claim-panel,.claim-main,.claim-meta{width:100%;min-width:0}.claim-main{gap:8px}.claim-quote{min-width:0;flex:1 1 0}.claim-quote blockquote{white-space:normal;overflow-wrap:anywhere}.claim-amount{flex:none;padding-left:8px}.claim-meta{grid-template-columns:repeat(2,minmax(0,1fr))}.panel-heading{min-width:0}.panel-heading-right{min-width:0}.content-grid,.column-main,.column-side{min-width:0}.process-caption{min-width:0;font-size:6px}.submitted-row{min-width:0}.chips{min-width:0}}
