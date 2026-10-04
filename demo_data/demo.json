@@ -1,0 +1,159 @@
+{
+  "project": {
+    "name": "Green Heights Residence",
+    "budget": 3200000,
+    "progress": 46,
+    "location": "Pune, Maharashtra"
+  },
+  "milestone": {
+    "name": "RCC Slab Completion",
+    "completion_date": "2026-10-04",
+    "claimed_completion": 100,
+    "payment_schedule": 320000
+  },
+  "claim": {
+    "text": "RCC slab work is complete.",
+    "contractor": "Apex Buildworks",
+    "requested_amount": 320000,
+    "submitted_at": "2026-10-04T10:42:11+05:30"
+  },
+  "boq": {
+    "expected_concrete_m3": 18,
+    "expected_steel_kg": 1250
+  },
+  "quantities": {
+    "initial_concrete_m3": 12.5,
+    "verified_concrete_m3": 18,
+    "steel_kg": 1250,
+    "initial_concrete_deliveries": [
+      {"name": "Concrete Delivery Receipt #104", "quantity": 7.0, "unit": "m³"},
+      {"name": "Concrete Delivery Receipt #118", "quantity": 5.5, "unit": "m³"}
+    ],
+    "additional_concrete_receipt": {"name": "Concrete_Delivery_02.pdf", "quantity": 5.5, "unit": "m³"}
+  },
+  "materials": [
+    {
+      "id": "concrete",
+      "name": "Ready-mix concrete",
+      "category": "Primary material",
+      "specification": "M25",
+      "specification_source": "BOQ / Structural Requirement",
+      "expected_quantity": 18,
+      "unit": "m³",
+      "supported_initial": 12.5,
+      "supported_verified": 18,
+      "supplier": "GreenMix RMC",
+      "invoice": "RMC Invoice #INV-204",
+      "deliveries_initial": 2,
+      "deliveries_verified": 3,
+      "images": ["concrete-slab.jpg", "site-progress.jpg"],
+      "status_initial": "partial",
+      "status_verified": "supported",
+      "confidence_initial": 68,
+      "confidence_verified": 94,
+      "risk": "HIGH",
+      "risk_reason": "Two delivery records support 12.5 m³ against 18 m³ required. A 5.5 m³ receipt closes the documented quantity gap."
+    },
+    {
+      "id": "steel",
+      "name": "TMT reinforcement steel",
+      "category": "Primary material",
+      "specification": "TMT reinforcement · Fe 500D per BOQ",
+      "specification_source": "BOQ / Structural Requirement",
+      "expected_quantity": 1250,
+      "unit": "kg",
+      "supported_initial": 1250,
+      "supported_verified": 1250,
+      "supplier": "Apex Buildworks",
+      "invoice": "Steel Invoice #ST-882",
+      "deliveries_initial": 1,
+      "deliveries_verified": 1,
+      "images": ["reinforcement.jpg", "site-progress.jpg"],
+      "status_initial": "inspection_pending",
+      "status_verified": "supported",
+      "confidence_initial": 91,
+      "confidence_verified": 96,
+      "risk": "MEDIUM",
+      "risk_reason": "Invoice quantity and BOQ specification match. Engineer inspection proof is an independent mandatory evidence item."
+    },
+    {
+      "id": "cement",
+      "name": "Cement",
+      "category": "Supporting material",
+      "specification": "As specified in approved procurement documents",
+      "specification_source": "Procurement schedule",
+      "expected_quantity": null,
+      "unit": "procurement support",
+      "supported_initial": null,
+      "supported_verified": null,
+      "supplier": "Apex Buildworks",
+      "invoice": "Cement Invoice #CM-417",
+      "deliveries_initial": 1,
+      "deliveries_verified": 1,
+      "images": ["site-progress.jpg"],
+      "status_initial": "supporting",
+      "status_verified": "supporting",
+      "confidence_initial": 88,
+      "confidence_verified": 90,
+      "risk": "LOW",
+      "risk_reason": "Procurement documentation is present. Packaging visibility is supporting evidence only; specification requires documents."
+    },
+    {
+      "id": "aggregate",
+      "name": "Coarse and fine aggregate",
+      "category": "Supporting material",
+      "specification": "As specified in approved mix design",
+      "specification_source": "Approved mix design",
+      "expected_quantity": null,
+      "unit": "procurement support",
+      "supported_initial": null,
+      "supported_verified": null,
+      "supplier": "GreenMix RMC",
+      "invoice": "Supplier ticket #AG-039",
+      "deliveries_initial": 1,
+      "deliveries_verified": 1,
+      "images": ["site-progress.jpg"],
+      "status_initial": "supporting",
+      "status_verified": "supporting",
+      "confidence_initial": 80,
+      "confidence_verified": 84,
+      "risk": "LOW",
+      "risk_reason": "Supplier ticket supports procurement. Visual appearance cannot establish aggregate grade or quantity."
+    }
+  ],
+  "evidence": [
+    {"name": "BOQ — RCC Slab", "type": "Project plan", "source": "Project team", "timestamp": "04 Oct · 09:10", "confidence": 98, "status": "supporting"},
+    {"name": "Structural Drawing — S04", "type": "Drawing", "source": "Structural consultant", "timestamp": "04 Oct · 09:12", "confidence": 96, "status": "supporting"},
+    {"name": "Milestone Payment Schedule", "type": "Payment schedule", "source": "Project team", "timestamp": "04 Oct · 09:14", "confidence": 98, "status": "supporting"},
+    {"name": "Concrete Delivery Receipt #104 · 7.0 m³", "type": "Delivery receipt", "source": "GreenMix RMC", "timestamp": "04 Oct · 10:18", "confidence": 91, "status": "supporting", "quantity_m3": 7.0},
+    {"name": "Concrete Delivery Receipt #118 · 5.5 m³", "type": "Delivery receipt", "source": "GreenMix RMC", "timestamp": "04 Oct · 10:31", "confidence": 93, "status": "supporting", "quantity_m3": 5.5},
+    {"name": "Steel Invoice — 1,250 kg", "type": "Invoice", "source": "Apex Buildworks", "timestamp": "04 Oct · 10:20", "confidence": 94, "status": "supporting"},
+    {"name": "Slab Progress Photos", "type": "Site photos", "source": "Apex Buildworks", "timestamp": "04 Oct · 10:25", "confidence": 82, "status": "uncertain"},
+    {"name": "Engineer Inspection Note", "type": "Inspection", "source": "Project engineer", "timestamp": "Not submitted", "confidence": 0, "status": "missing"}
+  ],
+  "initial_result": {
+    "status": "partially_verified",
+    "verification_score": 68,
+    "recommended_release": 210000,
+    "recommended_hold": 110000,
+    "verified_concrete_m3": 12.5,
+    "missing_evidence": ["Additional concrete delivery receipt · 5.5 m³", "Reinforcement inspection certificate", "Final engineer sign-off"]
+  },
+  "verified_result": {
+    "status": "verified",
+    "verification_score": 94,
+    "recommended_release": 320000,
+    "recommended_hold": 0,
+    "verified_concrete_m3": 18,
+    "missing_evidence": []
+  },
+  "audit_events": [
+    {"time": "10:42:11", "event": "Claim submitted", "detail": "Apex Buildworks · RCC Slab Completion"},
+    {"time": "10:42:15", "event": "Claim extracted", "detail": "₹3,20,000 requested · 100% completion"},
+    {"time": "10:42:19", "event": "BOQ checked", "detail": "RCC slab quantities matched to approved plan"},
+    {"time": "10:42:23", "event": "Delivery receipt analyzed", "detail": "12.5 m³ verified against 18 m³ expected"},
+    {"time": "10:42:27", "event": "Skeptic challenge raised", "detail": "Concrete shortfall and inspection proof missing"},
+    {"time": "10:42:30", "event": "Evidence Judge completed", "detail": "Partially verified · engineer approval required"},
+    {"time": "10:42:31", "event": "Payment recommendation generated", "detail": "₹2,10,000 release · ₹1,10,000 held"}
+  ]
+}
